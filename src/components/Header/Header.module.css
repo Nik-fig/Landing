@@ -1,0 +1,108 @@
+.header {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+}
+.header .headerContainer {
+  display: inline-flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+.header .headerContainer .logo {
+  display: block;
+}
+.header .headerContainer .logo img {
+  height: 50px;
+  width: 50px;
+}
+.header .headerContainer nav {
+  display: inline-flex;
+}
+.header .headerContainer nav > * {
+  margin: auto 10px;
+}
+.header .headerContainer nav a {
+  text-decoration: none;
+  color: black;
+}
+.header .headerContainer nav button {
+  color: #E47A3D;
+}
+.header .headerContainer nav .checkStatusModal {
+  padding: 10px;
+  border: 1px solid #E47A3D;
+}
+.header .headerContainer .serviceButton {
+  display: none;
+}
+.header .headerContainer .serviceButton div {
+  transition: ease 0.5s;
+}
+
+@media (max-width: 1200px) {
+  .header .headerContainer nav {
+    display: none;
+  }
+  .header .headerContainer .serviceButton {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContainer .serviceButton div {
+    height: 3px;
+    width: 25px;
+    background-color: #E47A3D;
+    margin: 5px auto;
+  }
+  .uncollapsed {
+    transition: ease 0.5s;
+    height: 100vh;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+  .uncollapsed .headerContainer {
+    justify-content: space-around;
+    padding: 0;
+    background-color: white;
+    height: 100%;
+    width: auto;
+    min-width: 35%;
+  }
+  .uncollapsed .headerContainer .logo {
+    display: none;
+  }
+  .uncollapsed .headerContainer nav {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .uncollapsed .headerContainer nav > * {
+    margin: 10px auto;
+  }
+  .uncollapsed .headerContainer nav button {
+    color: #E47A3D;
+  }
+  .uncollapsed .headerContainer nav .checkStatusModal {
+    padding: 10px;
+    border: 1px solid #E47A3D;
+  }
+  .uncollapsed .headerContainer .serviceButton div:first-child {
+    transform: rotate(45deg) translateY(6px);
+  }
+  .uncollapsed .headerContainer .serviceButton div:nth-child(2) {
+    display: none;
+  }
+  .uncollapsed .headerContainer .serviceButton div:last-child {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+  .uncollapsed .headerContainer div:first-child, .uncollapsed .headerContainer div:last-child {
+    transition: ease 0.5s;
+  }
+}
+
+/*# sourceMappingURL=Header.module.css.map */
