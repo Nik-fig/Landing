@@ -1,13 +1,19 @@
 import React from "react";
 
+import styles from './Footer.module.css'
+
 export function Footer() {
     return (
-        <footer>
-            <img
-                src='https://static.tildacdn.com/tild3334-6463-4634-b736-626564356364/1.png'
-                alt='logo'
-            />
-            <span>© Все права защищены</span>
+        <footer className={styles.footer}>
+            <div className={styles.footerContainer}>
+                <img
+                    src='https://static.tildacdn.com/tild3566-6237-4032-b134-613634366438/image.png'
+                    alt='logo'
+                />
+                <span className={styles.copyright}>
+                    © Все права защищены
+                </span>
+            </div>
         </footer>
     )
 }

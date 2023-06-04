@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"Question.module.css"}
+{"version":3,"sourceRoot":"","sources":["Question.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAEA;EACE;;AAGF;EACE;EACA;EAEA;EACA;EACA;;AAEA;EACE;;AAKN;EACE;;;AAOA;EACE;EACA;EAEA;;AACA;EACE;;AAKN;EACE;EACA;;;AAIJ;EAGM;IACE;;EAGJ;IACE","file":"Question.module.css"}

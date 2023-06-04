@@ -1,3 +1,50 @@
+.question {
+  background-color: #F0F3F5;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.question .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.question .header .questionText {
+  color: black;
+}
+.question .header .collapseButton {
+  transform: rotate(45deg);
+  transition: 0.5s ease;
+  border-radius: 100%;
+  padding: 2px;
+  background-color: white;
+}
+.question .header .collapseButton * {
+  stroke: #E47A3D;
+}
+.question .answer {
+  display: none;
+}
 
+.uncollapsed .header .collapseButton {
+  transform: rotate(0);
+  transition: 0.5s ease;
+  background-color: #E47A3D;
+}
+.uncollapsed .header .collapseButton * {
+  stroke: white;
+}
+.uncollapsed .answer {
+  margin-top: 5px;
+  display: block;
+}
+
+@media screen and (max-width: 576px) {
+  .question .header .questionText {
+    font-size: 0.8em;
+  }
+  .question .answer {
+    font-size: 0.8em;
+  }
+}
 
 /*# sourceMappingURL=Question.module.css.map */

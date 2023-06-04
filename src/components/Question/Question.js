@@ -4,23 +4,27 @@ import {GrClose} from 'react-icons/gr';
 import styles from './Question.module.css'
 
 export function Question({question, answer}) {
-    let [isOpen, setIsOpen] = useState(false);
+    let [isCollapse, setIsCollapse] = useState(false);
 
     function changeStatus() {
-        setIsOpen(!isOpen);
+        setIsCollapse(!isCollapse);
     }
 
     return (
         <div
             onClick={changeStatus}
+            className={[
+                styles.question,
+                isCollapse ? null : styles.uncollapsed
+            ].join(' ')}
         >
-            <div>
-                <span>
+            <div className={styles.header}>
+                <h3 className={styles.questionText}>
                     {question}
-                </span>
-                <GrClose/>
+                </h3>
+                <GrClose className={styles.collapseButton}/>
             </div>
-            <div>
+            <div className={styles.answer}>
                 {answer}
             </div>
         </div>

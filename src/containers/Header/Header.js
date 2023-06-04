@@ -1,10 +1,15 @@
-import React, {useState} from "react";
+import {useState} from "react";
+import {useDispatch} from 'react-redux';
 
 import style from './Header.module.css';
 
+import {openModal} from '../../redux/slices/modalSlice';
+
+import {NEW_REQUEST_MODAL_ID} from '../../modals/NewRequestModal/NewRequestModal'
+
 export function Header() {
     const [isCollapse, setIsCollapse] = useState(true);
-
+    const dispatch = useDispatch();
 
     return (
         <header
@@ -37,13 +42,29 @@ export function Header() {
                     />
                 </a>
                 <nav>
-                    <a href="#faq">Часто задаваемые вопросы</a>
-                    <a href="#contacts">Контакты</a>
+                    <a
+                        href="src/containers/Header#faq"
+                        onClick={() => {
+                            setIsCollapse(true);
+                        }}
+                    >
+                        Часто задаваемые вопросы
+                    </a>
+                    <a
+                        href="src/containers/Header#contacts"
+                        onClick={() => setIsCollapse(true)}
+                    >
+                        Контакты
+                    </a>
                     <button>
                         Проверить статус заявки
                     </button>
                     <button
                         className={style.checkStatusModal}
+                        onClick={() => {
+                            dispatch(openModal(NEW_REQUEST_MODAL_ID));
+                            setIsCollapse(true);
+                        }}
                     >
                         Связаться
                     </button>

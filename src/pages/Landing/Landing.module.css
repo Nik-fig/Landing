@@ -1,0 +1,12 @@
+.landing {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 80px;
+  background-color: white;
+  box-shadow: 0 0 30px 30px rgb(255, 255, 255);
+}
+.landing > section {
+  margin: 10px;
+}
+
+/*# sourceMappingURL=Landing.module.css.map */

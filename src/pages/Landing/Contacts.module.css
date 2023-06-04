@@ -1,0 +1,37 @@
+.contacts {
+  width: auto;
+}
+.contacts .contactsContainer {
+  display: flex;
+  flex-direction: column;
+}
+.contacts .contactsContainer > div {
+  margin: 5px 0;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  text-decoration: none;
+}
+.contacts .contactsContainer > div svg {
+  margin: 5px;
+  min-width: 25px;
+  min-height: 25px;
+  color: black;
+}
+.contacts .contactsContainer > div a {
+  width: auto;
+  height: 100%;
+  margin: auto;
+  margin-left: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 576px) {
+  .contacts h1 {
+    font-size: 1em;
+  }
+}
+
+/*# sourceMappingURL=Contacts.module.css.map */

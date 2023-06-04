@@ -1,9 +1,11 @@
 .header {
   text-align: center;
   position: fixed;
-  width: 100%;
   top: 0;
+  z-index: 2;
+  width: 100%;
   background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.22);
 
   .headerContainer {
     display: inline-flex;
@@ -14,6 +16,8 @@
 
     max-width: 1200px;
     width: 100%;
+
+
 
     .logo {
       display: block;
@@ -58,7 +62,7 @@
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
 
   .header {
 
@@ -138,6 +142,14 @@
       div:first-child, div:last-child {
         transition: ease 0.5s;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    .headerContainer {
+      padding: 0 5px;
     }
   }
 }

@@ -1,0 +1,19 @@
+.faq {
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin: 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .faq {
+    h1 {
+      font-size: 1em;
+    }
+  }
+}
