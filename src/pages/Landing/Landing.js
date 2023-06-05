@@ -12,8 +12,6 @@ import {Header} from '../../containers/Header/Header';
 import {Footer} from '../../components/Footer/Footer';
 import {Question} from '../../components/Question/Question';
 
-import {showAlert} from '../../utils/showAlert'
-
 import landingStyles from './Landing.module.css';
 import shortInfoStyles from './ShortInfo.module.css';
 import faqStyles from './FAQ.module.css';
@@ -83,7 +81,7 @@ export function Landing() {
                     <h1>
                         Контакты
                     </h1>
-                    <div className={contactsStyles.contactsContainer}>
+                    <div>
                         <div>
                             <GrMail/>
                             <a href='mailto:mailto@mail.ru'>

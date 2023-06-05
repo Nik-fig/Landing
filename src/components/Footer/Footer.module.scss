@@ -1,4 +1,7 @@
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   background-color: #393939;
@@ -28,10 +31,11 @@
     }
   }
 }
+
 @media screen and (max-width: 576px) {
   .footer {
     .footerContainer {
-      padding: 10px 0;
+      padding: 10px;
 
       img {
         max-width: 150px;
@@ -42,5 +46,4 @@
       }
     }
   }
-
 }

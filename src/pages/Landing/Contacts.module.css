@@ -1,11 +1,11 @@
 .contacts {
   width: auto;
 }
-.contacts .contactsContainer {
+.contacts > div {
   display: flex;
   flex-direction: column;
 }
-.contacts .contactsContainer > div {
+.contacts > div > div {
   margin: 5px 0;
   border: none;
   display: flex;
@@ -13,13 +13,13 @@
   width: auto;
   text-decoration: none;
 }
-.contacts .contactsContainer > div svg {
+.contacts > div > div svg {
   margin: 5px;
   min-width: 25px;
   min-height: 25px;
   color: black;
 }
-.contacts .contactsContainer > div a {
+.contacts > div > div a {
   width: auto;
   height: 100%;
   margin: auto;
@@ -28,9 +28,20 @@
   color: black;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1400px) and (min-width: 800px) {
+  .contacts {
+    margin-top: 30px;
+  }
   .contacts h1 {
-    font-size: 1em;
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contacts {
+    margin-top: 30px;
+  }
+  .contacts h1 {
+    font-size: 1.2em;
   }
 }
 

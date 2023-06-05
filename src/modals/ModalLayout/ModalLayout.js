@@ -26,11 +26,12 @@ export function ModalLayout() {
             ? (
                 <div
                     className={styles.modalLayout}
-                    onClick={(event) => {
+                    onMouseDown={(event) => {
                         if (event.target.className !== styles.modalLayout)
                             return;
                         dispatch(closeModal());
                     }}
+
                 >
                     {template}
                 </div>

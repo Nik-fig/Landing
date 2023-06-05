@@ -15,7 +15,7 @@ export function Header() {
         <header
             className={[
                 style.header,
-                (isCollapse ? null : style.uncollapsed)
+                (isCollapse ? style.collapsed : style.uncollapsed)
             ].join(' ')}
 
             onClick={(event) => {

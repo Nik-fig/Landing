@@ -24,4 +24,4 @@ export const {
     closeModal
 } = actions;
 
-export {reducer as ModalReducer};
+export {reducer as modalReducer};

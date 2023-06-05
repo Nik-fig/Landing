@@ -15,15 +15,15 @@ export function Question({question, answer}) {
             onClick={changeStatus}
             className={[
                 styles.question,
-                isCollapse ? null : styles.uncollapsed
+                isCollapse ? styles.collapsed : styles.uncollapsed
             ].join(' ')}
         >
-            <div className={styles.header}>
-                <h3 className={styles.questionText}>
+            <header>
+                <h3>
                     {question}
                 </h3>
                 <GrClose className={styles.collapseButton}/>
-            </div>
+            </header>
             <div className={styles.answer}>
                 {answer}
             </div>
