@@ -6,6 +6,7 @@ import style from './Header.module.css';
 import {openModal} from '../../redux/slices/modalSlice';
 
 import {NEW_REQUEST_MODAL_ID} from '../../modals/NewRequestModal/NewRequestModal'
+import {CHECK_STATUS_MODAL_ID} from '../../modals/CheckStatusModal/CheckStatusModal'
 
 export function Header() {
     const [isCollapse, setIsCollapse] = useState(true);
@@ -43,7 +44,7 @@ export function Header() {
                 </a>
                 <nav>
                     <a
-                        href="src/containers/Header#faq"
+                        href="#faq"
                         onClick={() => {
                             setIsCollapse(true);
                         }}
@@ -51,12 +52,17 @@ export function Header() {
                         Часто задаваемые вопросы
                     </a>
                     <a
-                        href="src/containers/Header#contacts"
+                        href="#contacts"
                         onClick={() => setIsCollapse(true)}
                     >
                         Контакты
                     </a>
-                    <button>
+                    <button
+                        onClick={() => {
+                            dispatch(openModal(CHECK_STATUS_MODAL_ID))
+                            setIsCollapse(true);
+                        }}
+                    >
                         Проверить статус заявки
                     </button>
                     <button

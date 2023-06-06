@@ -1,20 +1,20 @@
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, useSelector} from "react-redux";
 
-import CircularProgress from '@mui/material/CircularProgress'
+import CircularProgress from "@mui/material/CircularProgress";
 import {GrClose} from "react-icons/gr";
 
-import {NewRequestForm} from '../../containers/NewRequestForm/NewRequestForm'
+import styles from './CheckStatusModal.module.css';
 
-import styles from './NewRequestModal.module.css'
+import {CheckStatusForm} from '../../containers/CheckStatusForm/CheckStatusForm';
 
 import {closeModal} from "../../redux/slices/modalSlice";
 import {clearFetchStatus} from "../../redux/slices/requestSlice";
 
-export const NEW_REQUEST_MODAL_ID = 'NewRequestModal';
+export const CHECK_STATUS_MODAL_ID = 'CheckStatusModal';
 
-export function NewRequestModal() {
-    const dispatch = useDispatch()
-    const {id, fetchStatus} = useSelector(state => state.request);
+export function CheckStatusModal() {
+    const dispatch = useDispatch();
+    const {status, fetchStatus} = useSelector(state => state.request);
 
     const {
         loadingStatus, error
@@ -25,47 +25,38 @@ export function NewRequestModal() {
 
     switch (loadingStatus) {
         case 'idle':
-            header = 'Оформление заявки'
-            template = <NewRequestForm/>
+            header = 'Проверка статуса заявки'
+            template = <CheckStatusForm/>
             break;
         case 'loading':
-            header = 'Отправляю заявку'
-            template = <CircularProgress className={styles.loadingCircular}/>
+            header = 'Получаю статус заявки'
+            template = <CircularProgress/>
             break;
         case 'success':
-            header = 'Оформление заявки'
             const text = (
                 <div className={styles.textBlock}>
                     <span>
-                        {'Ваша заявка создана её номер: '}
+                        {'Статус вашей заявки: '}
                     </span>
                     <span
                         style={{
                             color: '#E47A3D',
                         }}
                     >
-                        {id}
+                        {status}
                     </span>
                 </div>
             )
+            header = 'Проверка статуса заявки'
             template = text
             break;
         case 'failed':
             header = 'Ошибка'
-            template = (
-                <div className={styles.textBlock}>
-                    <span>
-                        {error.type}
-                    </span>
-                    <span>
-                        {error.message}
-                    </span>
-                </div>
-            )
+            template = 'Проверьте корректность заполнения'
             break;
     }
     return (
-        <div className={styles.newRequestModal}>
+        <div className={styles.checkStatusModal}>
             <header>
                 <h2>{header}</h2>
                 <GrClose
@@ -78,7 +69,5 @@ export function NewRequestModal() {
             </header>
             {template}
         </div>
-    )
-    // return template;
-
+    );
 }

@@ -1,18 +1,29 @@
-import {renderToString} from "react-dom/server";
 import React from "react";
+import {renderToString} from "react-dom/server";
+
+import {Alert} from '../components/Alert/Alert'
 
 export function showAlert(text) {
     const div = document.createElement('div');
     div.innerHTML = renderToString(
-        <div
+        <Alert
+            text={text}
             style={{
                 position: 'fixed',
-                top: '0',
-                left: '50%',
+
+                width: '150px',
+
+                top: '20px',
+                backgroundColor: '#f5f5f5',
+                color: 'black',
+
+                border: '3px solid #E47A3D',
+                borderRadius: '10px',
+
+                padding: '10px',
+                zIndex: 3,
             }}
-        >
-            {text}
-        </div>
+        />
     )
 
     const alert = div.firstChild;

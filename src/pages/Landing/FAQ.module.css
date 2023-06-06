@@ -3,18 +3,13 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 1400px) and (min-width: 800px) {
+@media screen and (min-width: 800px) {
   .faq {
     margin-top: 50px;
   }
   .faq h1 {
     font-size: 2em;
   }
-  .faq div > * {
-    margin: 10px 0;
-  }
-}
-@media screen and (max-width: 800px) and (min-width: 576px) {
   .faq div > * {
     margin: 10px 0;
   }

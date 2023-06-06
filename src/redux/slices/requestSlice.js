@@ -2,6 +2,19 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
 import axios from "axios";
 
+export const checkRequest = createAsyncThunk(
+    'checkRequest',
+    async ({
+               id
+           }) => {
+        const response = await axios.get(
+            `https://help-maxbonus.ru/api/task/status/${id}`
+        )
+
+        return response.data.nameStatus;
+    }
+)
+
 export const sendNewRequest = createAsyncThunk(
     'sendNewRequest',
     async ({
@@ -22,14 +35,13 @@ export const sendNewRequest = createAsyncThunk(
                 description: description
             })
 
-        console.log(response);
-
-        return response;
+        return response.data.id;
     }
 )
 
 const initState = {
     id: null,
+    status: null,
     fetchStatus: {
         loadingStatus: 'idle',
         error: null,
@@ -39,12 +51,20 @@ const initState = {
 const requestSlice = createSlice({
     name: 'request',
     initialState: initState,
-    reducers: {},
+    reducers: {
+        clearFetchStatus: (state, action) => {
+            state.id = null;
+            state.status = null;
+            state.fetchStatus.loadingStatus = 'idle';
+            state.fetchStatus.error = null;
+        }
+    },
     extraReducers: builder => {
         builder
             .addCase(
                 sendNewRequest.pending,
                 (state) => {
+                    state.id = null;
                     state.fetchStatus.loadingStatus = 'loading';
                     state.fetchStatus.error = null;
                 }
@@ -52,6 +72,7 @@ const requestSlice = createSlice({
             .addCase(
                 sendNewRequest.fulfilled,
                 (state, action) => {
+                    state.id = action.payload;
                     state.fetchStatus.loadingStatus = 'success';
                     state.fetchStatus.error = null;
                 }
@@ -59,13 +80,47 @@ const requestSlice = createSlice({
             .addCase(
                 sendNewRequest.rejected,
                 (state, action) => {
+                    state.id = null;
+                    console.error(action.error);
                     state.fetchStatus.loadingStatus = 'failed'
-                    state.fetchStatus.email = action.error;
+                    state.fetchStatus.error = action.error;
+                }
+            )
+
+
+
+            .addCase(
+                checkRequest.pending,
+                (state, action) => {
+                    state.status = null;
+                    state.fetchStatus.loadingStatus = 'loading';
+                    state.fetchStatus.error = null;
+                }
+            )
+            .addCase(
+                checkRequest.fulfilled,
+                (state, action) => {
+                    state.status = action.payload;
+                    state.fetchStatus.loadingStatus = 'success';
+                    state.fetchStatus.error = null;
+                }
+            )
+            .addCase(
+                checkRequest.rejected,
+                (state, action) => {
+                    state.status = null;
+                    console.error(action.error);
+                    state.fetchStatus.loadingStatus = 'failed';
+                    state.fetchStatus.error = action.error;
                 }
             )
     }
 })
 
 const {actions, reducer} = requestSlice;
+
+export const {
+    clearFetchStatus
+} = actions
 
 export {reducer as requestReducer};

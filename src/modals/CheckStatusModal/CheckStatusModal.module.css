@@ -1,51 +1,52 @@
-.newRequestModal {
+.checkStatusModal {
   background-color: white;
   border-radius: 10px;
   text-align: center;
 }
-.newRequestModal header {
+.checkStatusModal header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.newRequestModal header .closeButton {
+.checkStatusModal header .closeButton {
   cursor: pointer;
 }
-.newRequestModal .loadingCircular {
+.checkStatusModal .loadingCircular {
   margin: auto;
 }
-.newRequestModal .textBlock {
+.checkStatusModal .textBlock {
   text-align: left;
 }
 
 @media screen and (min-width: 800px) {
-  .newRequestModal {
+  .checkStatusModal {
+    min-width: 300px;
     padding: 10px;
   }
-  .newRequestModal header {
+  .checkStatusModal header {
     margin-bottom: 10px;
   }
-  .newRequestModal header h2 {
+  .checkStatusModal header h2 {
     font-size: 1.3em;
   }
-  .newRequestModal header .closeButton {
-    margin-left: 20px;
+  .checkStatusModal header .closeButton {
     min-height: 15px;
     min-width: 15px;
   }
 }
 @media screen and (max-width: 576px) {
-  .newRequestModal {
+  .checkStatusModal {
     padding: 10px;
   }
-  .newRequestModal header h2 {
+  .checkStatusModal header h2 {
     font-size: 1.1em;
   }
-  .newRequestModal header .closeButton {
+  .checkStatusModal header .closeButton {
+    margin-left: 15px;
     min-height: 25px;
     min-width: 25px;
   }
 }
 
-/*# sourceMappingURL=NewRequestModal.module.css.map */
+/*# sourceMappingURL=CheckStatusModal.module.css.map */

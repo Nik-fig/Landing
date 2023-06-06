@@ -2,16 +2,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  background-color: white;
-
-  border-radius: 10px;
-
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   input, textarea {
     background-color: #e9e9e9;
@@ -56,22 +46,8 @@
   }
 }
 
-@media screen and (max-width: 1400px) and (min-width: 800px) {
+@media screen and (min-width: 800px) {
   .form {
-    padding: 0 10px;
-
-    header {
-      margin-bottom: 10px;
-
-      h2 {
-        font-size: 1.3em;
-      }
-
-      .closeButton {
-        min-height: 15px;
-        min-width: 15px;
-      }
-    }
 
     textarea {
       height: 100px;
@@ -104,19 +80,6 @@
 
 @media screen and (max-width: 576px) {
   .form {
-    padding: 0 10px;
-    min-width: 200px;
-
-    header {
-      h2 {
-        font-size: 1.1em;
-      }
-
-      .closeButton {
-        min-height: 20px;
-        min-width: 20px;
-      }
-    }
 
     input, textarea, select {
       height: 30px;
